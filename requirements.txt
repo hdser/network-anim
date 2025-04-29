@@ -1,0 +1,6 @@
+pandas>=2.0
+plotly>=5.20
+kaleido>=0.2.1
+imageio[ffmpeg]>=2.34
+reverse_geocoder==1.5.1
+tqdm>=4.64
