@@ -3,7 +3,7 @@
 Create a world-map animation (HTML or GIF) from a CSV that lists
 geolocated node counts by hour.
 
-**[View Interactive Animation](https://hdser.github.io/network-evolution-anim/network.html)** ← Click to view the interactive HTML animation
+**[View Interactive Animation](https://hdser.github.io/network-anim/network.html)** ← Click to view the interactive HTML animation
 
 ## 1. Quick start
 
