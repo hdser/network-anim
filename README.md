@@ -3,8 +3,6 @@
 Create a world-map animation (HTML or GIF) from a CSV that lists
 geolocated node counts by hour.
 
-![Network Animation Preview](https://via.placeholder.com/800x400?text=Network+Animation+Preview)
-
 **[View Interactive Animation](https://hdser.github.io/network-evolution-anim/network.html)** ← Click to view the interactive HTML animation
 
 ## 1. Quick start
@@ -61,27 +59,6 @@ The input CSV should have these columns:
 - `long`: Longitude coordinate
 - `cnt`: Node count at this location and time
 
-## 4. Viewing Interactive HTML Animations
+## License
 
-### Option 1: GitHub Pages (Recommended)
-To set up GitHub Pages for your interactive animations:
-
-1. In your repository, go to Settings → Pages
-2. Set source to "main" branch and "/docs" folder
-3. Generate your HTML animations to the "docs" directory:
-   ```bash
-   python animate_network.py -i nodes_geo.csv -o docs/network.html
-   ```
-4. Push to GitHub and your animation will be available at `https://yourusername.github.io/network-evolution-anim/network.html`
-
-### Option 2: Use GIF for GitHub README
-If you need the animation visible directly in the README, use the GIF output:
-
-```bash
-python animate_network.py -i nodes_geo.csv -o network.gif --fps 10
-```
-
-Then add to your README:
-```markdown
-![Network Animation](./network.gif)
-```
+This project is licensed under the [MIT License](LICENSE).
