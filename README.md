@@ -3,7 +3,7 @@
 Create a world-map animation (HTML or GIF) from a CSV that lists
 geolocated node counts by hour.
 
-**[View Interactive Animation](https://hdser.github.io/network-anim/network.html)** ← Click to view the interactive HTML animation
+**[View Interactive Animation](https://hdser.github.io/network-anim/)** ← Click to view the interactive HTML animation
 
 ## 1. Quick start
 
@@ -58,6 +58,68 @@ The input CSV should have these columns:
 - `lat`: Latitude coordinate
 - `long`: Longitude coordinate
 - `cnt`: Node count at this location and time
+
+
+# Fork Distribution Visualization
+
+This extension to the Network Evolution Animation project visualizes the distribution of different forks over time, providing both overall percentages and breakdown by top countries.
+
+## 1. Quick Start
+
+```bash
+# Make sure you have the required dependencies installed
+pip install -r requirements.txt
+
+# Generate the forks dashboard
+python visualize_forks.py -i forks_data.csv -o forks.html
+
+# Control animation speed (lower value = faster animation)
+python visualize_forks.py -i forks_data.csv -o forks.html --speed 200
+
+# Change number of top countries displayed
+python visualize_forks.py -i forks_data.csv -o forks.html --top 15
+```
+
+## 2. Command-line Options
+
+| Option | Description |
+|--------|-------------|
+| `-i, --input` | CSV file with date,country,fork,cnt columns (required) |
+| `-o, --output` | Output HTML dashboard file path |
+| `--top` | Number of top countries to display (default: 10) |
+| `--speed` | Animation speed in milliseconds (lower = faster, default: 300) |
+
+## 3. Features
+
+### Visualization components:
+
+1. **Overall Fork Distribution**:
+   - Shows the percentage distribution of different forks over time
+   - Bars are colored by fork type
+   - Animation shows how the distribution evolves hourly
+   - Hover information includes both percentage and actual node count
+
+2. **Top Countries Fork Distribution**:
+   - Displays the top countries based on total node count 
+   - Shows stacked bars with each fork's contribution
+   - Animation shows the evolution hourly
+   - Countries are ordered by total node count (descending)
+
+### Input Requirements:
+
+The input CSV file should have these columns:
+- `date`: Timestamp (will be parsed as datetime)
+- `country`: Two-letter country code (ISO 3166-1 alpha-2)
+- `fork`: Name of the fork
+- `cnt`: Number of nodes for this country/fork combination at this time
+
+## 4. Integration
+
+This visualization integrates with the existing Network Evolution Animation project:
+- Updated index.html includes links to both visualizations
+- Consistent styling across visualizations
+- Compatible with the same infrastructure and deployment approach
+
 
 ## License
 
